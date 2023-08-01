@@ -1,16 +1,16 @@
-@Library("sharedLibrary") _
+@Library('sharedLibrary') _
+
 pipeline{
   agent any
    stages{
-    stage("Call Groovy"){
-
-        first("Calling Groovy ")
-    }
+   
      stage("Greeting Groovy"){
+         steps{
         script{
-          greeting.add(100,200)
-          greeting.mul(100,200)
+          Calculator.add(100,200)
+          Calculator.mul(100,200)
         }
+         }
     }
 
    }
